@@ -3,6 +3,7 @@ package Iterator;
 public class Main {
 
 	public static void main(String[] args) {
+		
 		BookShelf bookShelf = new BookShelf(4);
 		bookShelf.addpendBook(new Book("设计模式A"));
 		bookShelf.addpendBook(new Book("设计模式B"));
