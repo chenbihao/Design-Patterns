@@ -4,7 +4,7 @@ package TemplateMethod;
  * @Description 模板模式
  */
 public class Main {
-	
+	 
 	public static void main(String[] args) {
 		AbstractDisplay d1=new CharDisplay('H');
 		AbstractDisplay d2=new StringDisplay("aaaaaaaaaa");
