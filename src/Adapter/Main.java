@@ -2,7 +2,7 @@ package Adapter;
 
 /**
  * @author CC
- * @Description 类适配器模式 
+ * @Description 类 适配器模式 
  */
 public class Main {
 
