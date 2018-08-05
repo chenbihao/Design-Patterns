@@ -2,7 +2,7 @@ package Adapter2;
 
 /**
  * @author CC
- * @Description Client(请求者) 委托模式的适配模式
+ * @Description Client(请求者) 委托模式 的适配模式
  */
 public class Main {
 
