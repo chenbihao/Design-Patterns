@@ -1,7 +1,7 @@
 package TemplateMethod;
 /**
  * @author CC
- * @Description 模板模式
+ * @Description 模板方法模式
  */ 
 public class Main {
 	 
