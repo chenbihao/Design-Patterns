@@ -2,7 +2,7 @@ package TemplateMethod;
 /**
  * @author CC
  * @Description 模板模式
- */
+ */ 
 public class Main {
 	 
 	public static void main(String[] args) {
