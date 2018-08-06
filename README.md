@@ -1,7 +1,7 @@
 # Design-Patterns
 # 设计模式的练习
 
-## 迭代器Iterator
+## 迭代器 Iterator
 		
 	/** 
 	 * 	为什么要引入迭代器（Iterator）呢？
@@ -22,7 +22,7 @@
 	 * 	不需要deleteIterator 
 	 */
 	
-## 适配器Adapter
+## 适配器 Adapter
 		
 	/**
 	* 使用现有的类时，可以使用适配模式来把这些现有的类当做组件使用
@@ -31,7 +31,7 @@
 	* 可以解决新旧版本兼容性问题
 	*/	 
 		 
-## 模板方法TemplateMethod	 
+## 模板方法 TemplateMethod	 
 		 
 	/**
 	* 模板方法模式的优点是可以在抽象父类中编写算法
@@ -39,7 +39,7 @@
 	* 处理的流程被定义在父类中，而具体的处理则交给了子类
 	*/ 
 	 	
-## 工厂方法FactoryMethod	
+## 工厂方法 FactoryMethod	
 	 	
 	 /**
 	 * 工厂模式把框架(framework包)和具体加工(idcard包) 分离开来 进行解耦
