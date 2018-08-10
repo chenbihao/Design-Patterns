@@ -100,7 +100,16 @@
 	 	
 ## 构建 Builder	
 	 	
-	 	
+	/**
+	*	Director仅使用Builder的方法即可编写文档
+	*	即：Director并不关心实际编写文档的是哪个子类
+	*	
+	*	//谁知道什么?
+	*	//Main并不知道Builder类，它只是调用了Director类的construct方法
+	*	//Director类只知道Builder类，并不知道它真正的使用了哪个类
+	*	//【只有不知道子类才能替换】【可替换性】
+	*	//正是因为可以替换，组件才具有高价值
+	*/ 	
 	 	
 	 	
 	 	
