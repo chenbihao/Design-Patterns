@@ -114,16 +114,17 @@
 ## 抽象工厂 AbstractFactory		
 	 	
 	/**
+	*	易于增加具体的工厂 ：
+	*	只需编写Factory，Link，Tray，Page
 	*	
+	*	难以增加新的零件	比如要在factory包中增加一个图片的零部件
+	*	在ListFactory中加入createPicture方法，编写ListPicture类
+	*	已经编写完成的具体工厂越多，修改的工作量就会越大
 	*	
-	*	
-	*	
-	*	
-	*	
-	*	
-	*	
-	*	
-	*	
+	*	//	java中的几种生成实例的方法
+	*	//	1:new		Something obj =new Something();	//此时类名会出现在代码中（强耦合）
+	*	//	2:clone	(Something)clone();
+	*	//	3:newInstance someobj.getClass().newInstance();
 	*	
 	*/ 	
 	 	
