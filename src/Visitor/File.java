@@ -3,22 +3,15 @@ package Visitor;
 public class File extends Entry {
 	private String Name;
 	private int Size;
-
 	public File(String name, int size) {
 		super();
 		Name = name;
 		Size = size;
 	}
-
 	@Override
-	public String getName() {
-		return Name;
-	}
-
+	public String getName() {return Name;}
 	@Override
-	public int getSize() {
-		return Size;
-	}
+	public int getSize() {return Size;}
 
 //	@Override
 //	protected void printList(String prefix) {

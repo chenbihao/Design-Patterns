@@ -8,6 +8,7 @@ import java.util.Iterator;
  */
 public class ListVisitor extends Visitor{
 	private String currentdir="";
+	
 	@Override
 	public void visit(File file) {//在访问文件时调用
 		System.out.println(currentdir+"/"+file);

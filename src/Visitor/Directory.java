@@ -6,16 +6,11 @@ import java.util.Iterator;
 public class Directory extends Entry {
 	private String name;
 	private ArrayList directory = new ArrayList();
-
 	public Directory(String name) {
-		super();
 		this.name = name;
 	}
-
 	@Override
-	public String getName() {
-		return name;
-	}
+	public String getName() {return name;}
 
 	@Override
 	public int getSize() {
