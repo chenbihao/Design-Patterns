@@ -256,8 +256,10 @@
 ### 中介者 Mediator		（只有一个仲裁者）
 		 
 	/**
+	*	要调整多个对象之间的关系时，就需要用到Mediator模式。
+	*	将逻辑处理交给仲裁者负责
 	*	
-	*	//
+	*	//组员可以复用但仲裁者难复用
 	*/  		
 	 	
 	 	
@@ -268,8 +270,23 @@
 ### 观察者 Observer		（发送状态变化通知）
 		 
 	/**
+	*	Observer的顺序 ：     注意 不能因为update方法的调用顺序发生改变而产生问题
+	*	当Observer的行为会对Subject产生影响时：可能会导致方法被循环调用
+	*	传递更新信息的方式：
+	*	void update(Generator g);			（1）
+	*	void update(Generator g,int i);		（2）
+	*	void update(int i);				（3）
+	*	从“观察”变为“通知”
 	*	
-	*	//
+	*	java.util.Observer接口和java.util.Observable接口
+	*	Observable接口：public void update(Observable obj,Object arg)
+	*	update方法的参数则接收到：Observable类的实例是被观察的Subject角色；Object类的实例是附加信息，与（2）类似
+	*	缺点:必须继承，传递给Observable接口的Object对象必须为Observer的子类
+	*	
+	*	
+	*	//利用抽象类和接口从具体类中抽出抽象方法
+	*	//将实例作为参数传递至类中，或者在类的字段中保存实例时，不使用具体类型而是使用抽象类和接口
+	*	
 	*/  	
 	 	
 ### 备忘录 Memento		（保存对象状态）
