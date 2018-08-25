@@ -328,8 +328,13 @@
 ### 享元 Flyweight		（共享对象，避免浪费）
 		 
 	/**
+	*	Intrinsic与Extrinsic:
+	*	Intrinsic信息: 不依赖于位置与状况，可以共享
+	*	Extrinsic信息: 依赖于位置与状况，不可以共享
 	*	
-	*	//
+	*	注意：不要让被共享的实例被CG回收了
+	*
+	*	//public 【synchronized】 BigChar getBigChar
 	*/  	
 	 	
 ### 代理 Proxy		（只在必要时生成实例）
