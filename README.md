@@ -340,8 +340,18 @@
 ### 代理 Proxy		（只在必要时生成实例）
 		 
 	/**
+	*	无论get,set方法被调用多少次，都不会生成真身的实例，只在必要时生成实例
+	*	真身类并不知道代理类的存在，而代理类中却显式地写出了
+	*	解耦方法:修改代理类使让其不知道真类名：
+	*	private Printable real;
+	*	private String className;
+	*	.......(构造函数中加入className)
+	*	real=(Printable)Class.forName(className).newInstance();
 	*	
-	*	//
+	*	//使用代理人来提升处理速度
+	*	//透明性：通过接口，main可以不用在意调用的是代理类还是真身
+	*	//各种代理模式：
+	*	//虚拟代理（本例）；远程代理（不必在意真身是否在远程网络上）；Access Proxy（权限访问）
 	*/  		
 	 	
 	 	
