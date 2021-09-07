@@ -59,4 +59,48 @@ public class SingletonTest {
     // 反射破坏、序列化
 
 
+    @Test
+    public void testThreadSingleton() {
+
+        // 线程内相同
+        ThreadSingleton instanceA1 = ThreadSingleton.getInstance();
+        ThreadSingleton instanceA2 = ThreadSingleton.getInstance();
+        Assertions.assertEquals(instanceA1, instanceA2);
+
+        Thread t = new Thread(() -> {
+
+            // 线程内相同
+            ThreadSingleton instanceB1 = ThreadSingleton.getInstance();
+            ThreadSingleton instanceB2 = ThreadSingleton.getInstance();
+            Assertions.assertEquals(instanceB1, instanceB2);
+
+            // 线程之间不同
+            Assertions.assertNotEquals(instanceA1, instanceB1);
+        });
+    }
+
+
+    // 集群单例
+    // 前面的单例实例都是属于 “进程唯一”，而集群单例也就是 “进程间也唯一”
+    // 具体实现方法为：
+    //
+    // 把这个单例对象序列化并存储到外部共享存储区（比如文件、缓存等）。
+    // 进程在使用这个单例对象的时候，需要先从外部共享存储区中将它读取到内存，并反序列化成对象，然后再使用，使用完成之后还需要再存储回外部共享存储区。
+    // 为了保证任何时刻，在进程间都只有一份对象存在，一个进程在获取到对象之后，需要对对象加锁，避免其他进程再将其获取。在进程使用完这个对象之后，还需要显式地将对象从内存中删除，并且释放对对象的加锁。
+
+
+
+    @Test
+    public void testMultipleSingleton() {
+
+        MultipleSingleton instanceA1 = MultipleSingleton.getInstance(1);
+        MultipleSingleton instanceB1 = MultipleSingleton.getInstance(1);
+        MultipleSingleton instanceA2 = MultipleSingleton.getInstance(2);
+        MultipleSingleton instanceA3 = MultipleSingleton.getInstance(3);
+        Assertions.assertEquals(instanceA1, instanceB1);
+        Assertions.assertNotEquals(instanceA1, instanceA2);
+        Assertions.assertNotEquals(instanceA2, instanceA3);
+
+    }
+
 }

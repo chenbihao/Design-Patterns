@@ -14,7 +14,6 @@ public class DoubleLockingSingleton {
      */
     private static volatile DoubleLockingSingleton instance;
 
-
     private DoubleLockingSingleton() {
         System.out.println("初始化..");
     }
@@ -33,5 +32,4 @@ public class DoubleLockingSingleton {
         }
         return instance;
     }
-
 }

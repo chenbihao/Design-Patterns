@@ -23,5 +23,4 @@ public class StaticInnerClassSingleton {
     public static StaticInnerClassSingleton getInstance() {
         return SingletonHolder.instance;
     }
-
 }

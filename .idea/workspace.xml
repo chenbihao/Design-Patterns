@@ -4,25 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68aa0151-f90b-4215-a2e5-e9906aae14ef" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/DoubleLockingSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/EnumSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/HungrySingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/LazySingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/StaticInnerClassSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/SingletonTest.java" afterDir="false" />
+    <list default="true" id="68aa0151-f90b-4215-a2e5-e9906aae14ef" name="Changes" comment="Singleton">
+      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/MultipleSingleton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/src/singleton/ThreadSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design-Patterns.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Design-Patterns.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/singleton/DoubleLockingSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/singleton/DoubleLockingSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/singleton/EnumSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/singleton/EnumSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/singleton/HungrySingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/singleton/HungrySingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/singleton/LazySingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/singleton/LazySingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/src/singleton/StaticInnerClassSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/src/singleton/StaticInnerClassSingleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SingletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SingletonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/SingletonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SingletonTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +64,7 @@
       <recent name="src.singleton" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SingletonTest.testEnumSingleton">
+  <component name="RunManager" selected="JUnit.SingletonTest.testMultipleSingleton">
     <configuration name="SingletonTest.testDoubleCheckedSingleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Design-Patterns" />
       <option name="PACKAGE_NAME" value="" />
@@ -93,21 +85,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SingletonTest.testHurrySingleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SingletonTest.testMultipleSingleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Design-Patterns" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SingletonTest" />
-      <option name="METHOD_NAME" value="testHurrySingleton" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SingletonTest.testLazySingleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Design-Patterns" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SingletonTest" />
-      <option name="METHOD_NAME" value="testLazySingleton" />
+      <option name="METHOD_NAME" value="testMultipleSingleton" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -123,13 +105,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SingletonTest.testThreadSingleton" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Design-Patterns" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SingletonTest" />
+      <option name="METHOD_NAME" value="testThreadSingleton" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SingletonTest.testMultipleSingleton" />
+        <item itemvalue="JUnit.SingletonTest.testThreadSingleton" />
         <item itemvalue="JUnit.SingletonTest.testEnumSingleton" />
         <item itemvalue="JUnit.SingletonTest.testStaticInnerClassSingleton" />
         <item itemvalue="JUnit.SingletonTest.testDoubleCheckedSingleton" />
-        <item itemvalue="JUnit.SingletonTest.testLazySingleton" />
-        <item itemvalue="JUnit.SingletonTest.testHurrySingleton" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +142,8 @@
       <workItem from="1630846716390" duration="823000" />
       <workItem from="1630847559289" duration="960000" />
       <workItem from="1630848540339" duration="125000" />
-      <workItem from="1630934926992" duration="6842000" />
+      <workItem from="1630934926992" duration="6968000" />
+      <workItem from="1631020512281" duration="2338000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1630844847206</created>
@@ -159,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630844847206</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Singleton">
+      <created>1630941867734</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1630941867734</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +179,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />
-    <option name="LAST_COMMIT_MESSAGE" value="update" />
+    <MESSAGE value="Singleton" />
+    <option name="LAST_COMMIT_MESSAGE" value="Singleton" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

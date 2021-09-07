@@ -1,7 +1,5 @@
 package src.singleton;
 
-import java.util.concurrent.atomic.AtomicLong;
-
 /**
  * @author: chenbihao
  * @create: 2021/9/6
@@ -15,8 +13,7 @@ public enum EnumSingleton {
      */
     INSTANCE;
 
-    public static void doSomething(){
+    public static void doSomething() {
         //do something
     }
-
 }
