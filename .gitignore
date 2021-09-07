@@ -1,0 +1,9 @@
+### Java template
+# Compiled class file
+*.class
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
