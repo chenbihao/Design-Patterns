@@ -89,7 +89,6 @@ public class SingletonTest {
     // 为了保证任何时刻，在进程间都只有一份对象存在，一个进程在获取到对象之后，需要对对象加锁，避免其他进程再将其获取。在进程使用完这个对象之后，还需要显式地将对象从内存中删除，并且释放对对象的加锁。
 
 
-
     @Test
     public void testMultipleSingleton() {
 
@@ -101,6 +100,56 @@ public class SingletonTest {
         Assertions.assertNotEquals(instanceA1, instanceA2);
         Assertions.assertNotEquals(instanceA2, instanceA3);
 
+        Runtime.getRuntime();
     }
+
+
+    // 实例：
+
+
+    // java.lang.Runtime#getRuntime()
+
+//     public class Runtime {
+//        private static final Runtime currentRuntime = new Runtime();
+//
+//        public static Runtime getRuntime() {
+//            return currentRuntime;
+//        }
+//
+//        /** Don't let anyone else instantiate this class */
+//        private Runtime() {}
+//          ......
+//     }
+
+    // Mybatis ErrorContext#instance()
+    // 这里的 ThreadLocal 相当于【线程唯一单例】里的 ConcurrentHashMap
+
+//    public class ErrorContext {
+//        private static final String LINE_SEPARATOR = System.getProperty("line.separator","\n");
+//        private static final ThreadLocal<ErrorContext> LOCAL = new ThreadLocal<ErrorContext>();
+//
+//        private ErrorContext stored;
+//        private String resource;
+//        private String activity;
+//        private String object;
+//        private String message;
+//        private String sql;
+//        private Throwable cause;
+//
+//        private ErrorContext() {
+//        }
+//
+//        public static ErrorContext instance() {
+//            ErrorContext context = LOCAL.get();
+//            if (context == null) {
+//                context = new ErrorContext();
+//                LOCAL.set(context);
+//            }
+//            return context;
+//        }
+//    }
+
+
+
 
 }

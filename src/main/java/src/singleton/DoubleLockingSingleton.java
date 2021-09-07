@@ -7,7 +7,6 @@ package src.singleton;
  * @History:
  */
 public class DoubleLockingSingleton {
-
     /**
      * 此处加 volatile 是为了禁止指令重排（通过加内存屏障来禁止）
      * 高版本 Java 可以不需要加 volatile 关键字，因为 JDK 内部已经把 new 操作和初始化操作定义为原子操作（存疑）

@@ -7,7 +7,6 @@ package src.singleton;
  * @History:
  */
 public class HungrySingleton {
-
     /**
      * 线程安全，但不支持延迟加载
      */
