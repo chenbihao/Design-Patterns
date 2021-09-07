@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="68aa0151-f90b-4215-a2e5-e9906aae14ef" name="Changes" comment="Singleton">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +134,7 @@
       <workItem from="1630847559289" duration="960000" />
       <workItem from="1630848540339" duration="125000" />
       <workItem from="1630934926992" duration="6968000" />
-      <workItem from="1631020512281" duration="2524000" />
+      <workItem from="1631020512281" duration="2596000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1630844847206</created>
@@ -165,7 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631022936876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Singleton">
+      <created>1631023077136</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631023077136</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Singleton">
+      <created>1631023083778</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1631023083778</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
