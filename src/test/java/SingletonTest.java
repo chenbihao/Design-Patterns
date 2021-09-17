@@ -52,7 +52,7 @@ public class SingletonTest {
 //        try{
 //            instance = new StaticBlockSingleton();
 //        }catch(Exception e){
-//            throw new RuntimeException("Exception occured in creating singleton instance");
+//            throw new RuntimeException("Exception occured in creating Singleton instance");
 //        }
 //    }
 
@@ -109,46 +109,49 @@ public class SingletonTest {
 
     // java.lang.Runtime#getRuntime()
 
-//     public class Runtime {
-//        private static final Runtime currentRuntime = new Runtime();
-//
-//        public static Runtime getRuntime() {
-//            return currentRuntime;
-//        }
-//
-//        /** Don't let anyone else instantiate this class */
-//        private Runtime() {}
-//          ......
-//     }
+    /**
+     public class Runtime {
+        private static final Runtime currentRuntime = new Runtime();
+
+        public static Runtime getRuntime() {
+            return currentRuntime;
+        }
+
+        // Don't let anyone else instantiate this class
+        private Runtime() {}
+          ......
+     }
+     */
 
     // Mybatis ErrorContext#instance()
     // 这里的 ThreadLocal 相当于【线程唯一单例】里的 ConcurrentHashMap
 
-//    public class ErrorContext {
-//        private static final String LINE_SEPARATOR = System.getProperty("line.separator","\n");
-//        private static final ThreadLocal<ErrorContext> LOCAL = new ThreadLocal<ErrorContext>();
-//
-//        private ErrorContext stored;
-//        private String resource;
-//        private String activity;
-//        private String object;
-//        private String message;
-//        private String sql;
-//        private Throwable cause;
-//
-//        private ErrorContext() {
-//        }
-//
-//        public static ErrorContext instance() {
-//            ErrorContext context = LOCAL.get();
-//            if (context == null) {
-//                context = new ErrorContext();
-//                LOCAL.set(context);
-//            }
-//            return context;
-//        }
-//    }
+    /**
+    public class ErrorContext {
+        private static final String LINE_SEPARATOR = System.getProperty("line.separator","\n");
+        private static final ThreadLocal<ErrorContext> LOCAL = new ThreadLocal<ErrorContext>();
 
+        private ErrorContext stored;
+        private String resource;
+        private String activity;
+        private String object;
+        private String message;
+        private String sql;
+        private Throwable cause;
+
+        private ErrorContext() {
+        }
+
+        public static ErrorContext instance() {
+            ErrorContext context = LOCAL.get();
+            if (context == null) {
+                context = new ErrorContext();
+                LOCAL.set(context);
+            }
+            return context;
+        }
+    }
+    */
 
 
 
