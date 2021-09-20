@@ -33,7 +33,8 @@
 - 扩展性、可测试性不友好
 - 不支持有参数的构造函数
 
-## [工厂模式（Factory）](src/文章/Factory.md)
+## [工厂模式（Factory）](src/文章/Factory.md)（目录与实例）
+
 
 //todo 完成后需拷贝介绍出来
 

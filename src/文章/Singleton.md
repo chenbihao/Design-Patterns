@@ -35,7 +35,7 @@
 
 ### 饿汉式
 
-``` java
+```java
 public class HungrySingleton {
   /**
    * 线程安全，但不支持延迟加载
@@ -57,7 +57,7 @@ public class HungrySingleton {
 
 ### 懒汉式
 
-``` java
+```java
 public class LazySingleton {
   private static LazySingleton instance;
 
@@ -79,7 +79,7 @@ public class LazySingleton {
 
 ### 双重检测
 
-``` java
+```java
 public class DoubleLockingSingleton {
     /**
      * 此处加 volatile 是为了禁止指令重排（通过加内存屏障来禁止）
@@ -112,7 +112,7 @@ public class DoubleLockingSingleton {
 
 ### 静态内部类
 
-``` java
+```java
 public class StaticInnerClassSingleton {
 
     private StaticInnerClassSingleton() {
@@ -136,7 +136,7 @@ public class StaticInnerClassSingleton {
 
 
 ### 枚举
-``` java
+```java
 public enum EnumSingleton {
     /**
      * Java规范字规定，每个枚举类型及其定义的枚举变量在JVM中都是唯一的，保证了实例创建的线程安全性和实例的唯一性
@@ -160,7 +160,7 @@ public enum EnumSingleton {
 
 ### 线程唯一
 
-``` java
+```java
 public class ThreadSingleton {
 
     private static final ConcurrentHashMap<Long, ThreadSingleton> instances = new ConcurrentHashMap<>();
@@ -194,7 +194,7 @@ public class ThreadSingleton {
 
 ### 多例
 
-``` java
+```java
 public class MultipleSingleton {
 
     private long id;
@@ -232,7 +232,7 @@ public class MultipleSingleton {
 
 java.lang.Runtime#getRuntime()
 
-``` java
+```java
      public class Runtime {
         private static final Runtime currentRuntime = new Runtime();
 
@@ -242,7 +242,7 @@ java.lang.Runtime#getRuntime()
 
         /** Don't let anyone else instantiate this class */
         private Runtime() {}
-          ......
+          //......
      }
 ```
 
@@ -254,7 +254,7 @@ ErrorContext#instance()
 
 这里的 ThreadLocal 相当于【线程唯一单例】里的 ConcurrentHashMap
 
-``` java
+```java
     public class ErrorContext {
         private static final String LINE_SEPARATOR = System.getProperty("line.separator","\n");
         private static final ThreadLocal<ErrorContext> LOCAL = new ThreadLocal<ErrorContext>();
