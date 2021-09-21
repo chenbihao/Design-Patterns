@@ -2,7 +2,7 @@
 
 ## 介绍
 
-简单工厂模式描述了一个类， 它拥有一个包含大量条件语句的构建方法， 可根据方法的参数来选择对何种产品进行初始化并将其返回。
+简单工厂模式描述了一个类，它拥有一个包含大量条件语句的构建方法，可根据方法的参数来选择对何种产品进行初始化并将其返回。
 
 ## 适用场景
 
@@ -19,6 +19,12 @@
 - 代码简单
 - 避免耦合
 
+## 与其他模式的关系
+
+- 大多数情况下，简单工厂是引入工厂方法或抽象工厂模式时的一个中间步骤。
+
+
+---
 ## 示例
 
 简单的用 if 判断参数，并生成对象给调用者。
@@ -63,20 +69,23 @@ public class RuleConfigParserFactory {
 }
 ```
 
-
+---
 ## 实例
 
-JDK类库中广泛使用了简单工厂模式，如工具类java.text.DateFormat，它用于格式化一个本地日期或者时间。
+JDK类库中广泛使用了简单工厂模式，如工具类 java.text.DateFormat，它用于格式化一个本地日期或者时间。
+```
+java.text.DateFormat#getDateInstance()
+java.text.DateFormat#getDateInstance(int style)
+java.text.DateFormat#getDateInstance(int style,Locale locale)
+```
 
-public final static DateFormat getDateInstance();
-public final static DateFormat getDateInstance(int style);
-public final static DateFormat getDateInstance(int style,Locale
-locale);
-
-Java加密技术
-
-获取不同加密算法的密钥生成器:
-KeyGenerator keyGen=KeyGenerator.getInstance("DESede");
+密钥生成器：
+```
+javax.crypto.KeyGenerator#getInstance(String algorithm)
+```
 
 创建密码器:
-Cipher cp=Cipher.getInstance("DESede");
+```
+javax.crypto.Cipher#getInstance(String transformation);
+```
+
