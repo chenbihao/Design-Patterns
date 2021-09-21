@@ -4,31 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68aa0151-f90b-4215-a2e5-e9906aae14ef" name="Changes" comment="工厂模式">
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/client/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/client/ApplicationConfigurator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/factory/PrinterFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/factory/PrinterHTMLFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/factory/PrinterPDFFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyArrayListHTML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyArrayListPDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyLinkedListHTML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/abstractFactory/product/MyLinkedListPDF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/methodFactory/CollectionFactoryMap.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/methodFactory/DequeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/methodFactory/ICollectionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/methodFactory/LinkedFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/methodFactory/ListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/src/factory/simpleFactory/CollectionFactory.java" afterDir="false" />
+    <list default="true" id="68aa0151-f90b-4215-a2e5-e9906aae14ef" name="Changes" comment="git">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/文章/Factory-AbstractFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/文章/Factory-AbstractFactory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/文章/Factory-FactoryMethod.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/文章/Factory-FactoryMethod.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/文章/Factory-SimpleFactory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/文章/Factory-SimpleFactory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/文章/Factory.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/文章/Factory.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/文章/Singleton.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/文章/Singleton.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +44,7 @@
   </component>
   <component name="ProjectId" id="1xigBJJQkZNJ1lI3WSy95JHMUCj" />
   <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -181,7 +160,8 @@
       <workItem from="1631280620442" duration="21000" />
       <workItem from="1631918084908" duration="2513000" />
       <workItem from="1631972012145" duration="45000" />
-      <workItem from="1632125918868" duration="17093000" />
+      <workItem from="1632125918868" duration="17462000" />
+      <workItem from="1632189910492" duration="55000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1630844847206</created>
@@ -246,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631921325958</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="工厂模式">
+      <created>1632151729610</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1632151729610</updated>
+    </task>
+    <task id="LOCAL-00011" summary="git">
+      <created>1632151779945</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1632151779945</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -268,7 +262,8 @@
     <MESSAGE value="update" />
     <MESSAGE value="Singleton" />
     <MESSAGE value="工厂模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="工厂模式" />
+    <MESSAGE value="git" />
+    <option name="LAST_COMMIT_MESSAGE" value="git" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
