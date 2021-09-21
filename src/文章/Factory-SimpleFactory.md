@@ -72,7 +72,7 @@ public class RuleConfigParserFactory {
 ---
 ## 实例
 
-JDK类库中广泛使用了简单工厂模式，如工具类 java.text.DateFormat，它用于格式化一个本地日期或者时间。
+JDK类库中广泛使用了简单工厂模式，如工具类 `java.text.DateFormat`，它用于格式化一个本地日期或者时间。
 ```
 java.text.DateFormat#getDateInstance()
 java.text.DateFormat#getDateInstance(int style)

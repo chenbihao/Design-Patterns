@@ -1,7 +1,6 @@
 package src.factory.abstractFactory.client;
 
 
-
 import src.factory.abstractFactory.factory.PrinterFactory;
 import src.factory.abstractFactory.product.MyArrayList;
 import src.factory.abstractFactory.product.MyLinkedList;

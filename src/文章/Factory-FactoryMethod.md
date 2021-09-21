@@ -121,10 +121,9 @@ javax.xml.bind.JAXBContext#createMarshaller() 及其他类似的方法。
 
 ### JDK 日历类 Calendar：
 
+这个是简单工厂：
+
 java.util.Calendar#getInstance()
-
-这个是简单工厂
-
 ```java
 
 public abstract class Calendar implements Serializable, Cloneable, Comparable<Calendar> {
@@ -179,10 +178,9 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
 
 ### slf4j
 
+这个是工厂方法：
+
 org.slf4j.LoggerFactory#getILoggerFactory()
-
-这个是工厂方法
-
 ``` java
 public static ILoggerFactory getILoggerFactory() {
     if (INITIALIZATION_STATE == UNINITIALIZED) {

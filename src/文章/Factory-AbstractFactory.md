@@ -66,7 +66,7 @@ YamlSystemConfigParser
 PropertiesSystemConfigParser
 ```
 
-让一个工厂负责创建多个不同类型的对象（IRuleConfigParser、ISystemConfigParser 等），而不是只创建一种 parser 对象。这样就可以有效地减少工厂类的个数。具体的代码实现如下所示：
+让一个工厂负责创建多个不同类型的对象（`IRuleConfigParser`、`ISystemConfigParser` 等），而不是只创建一种 parser 对象。这样就可以有效地减少工厂类的个数。具体的代码实现如下所示：
 
 ```java
 public interface IConfigParserFactory {
@@ -137,7 +137,7 @@ refactoringguru 文中示例的是 “跨平台 UI 组件”，目的为适配�
 
 算法题中有很多数据结构类型，比如数组，链表，树等结构。这边假设要实现一个可视化的数据结构。
 
-上面简单工厂实现了一个简单容器工厂 CollectionFactory，用来创建不同的数据类型。
+上面简单工厂实现了一个简单容器工厂 `CollectionFactory`，用来创建不同的数据类型。
 
 到了这里，结构有了，想要输出成 html 动态显示，或者输出成 pdf 打印版，于是利用抽象工厂来实现：
 
@@ -267,6 +267,7 @@ public class ApplicationConfigurator {
 
 }
 ```
+这样的话，如后续果我想扩展类型，或者开放给别人扩展，别人只需要扩展一个新的类型即可，不需要改动工厂。
 
 ---
 ## 实例
@@ -278,8 +279,40 @@ javax.xml.transform.TransformerFactory#newInstance()
 javax.xml.xpath.XPathFactory#newInstance()
 ```
 
+### JDBC
+
+``` java
+//加载数据库驱动
+Class.forName("com.mysql.jdbc.Driver");
+//连接相应的数据库
+Connection connection = DriverManager.getConnection("url", "username", "password");
+```
+
+这个私有 `getConnection` 方法中会遍历已经注册数据库驱动，
+
+也就是我们加载的 MySQL 数据库驱动 `Class.forName("com.mysql.jdbc.Driver")`。
+
+DriverManager#getConnection()：
+``` java
+// private static Connection getConnection(String url, java.util.Properties info, Class<?> caller)
+···
+for(DriverInfo aDriver : registeredDrivers){
+···
+    Connection con = aDriver.driver.connect(url, info);
+···
+}
+```
+
+代码中 `aDriver.driver` 返回的正是 MySQL 实现的具体驱动，
+
+也就是一个具体的子工厂 `com.mysql.jdbc.Driver`，
+
+它的抽象工厂接口则是 Java 提供的 `com.sql.Driver`。
 
 
+#### 总结：
 
+Java 定义了一种 JDBC 连接数据库的方式和相应的接口，各个厂商只需要实现它即可。
 
+客户端在选择使用哪种数据库的时候不用关心具体方法的调用或者返回哪一个类，只需要使用工厂中提供的工厂方法即可。
 

@@ -148,6 +148,8 @@
 ## 差别总结 todo
 
 
+... 工厂模式在 86 Spring 中的应用
+
 ...  也有一些非典型工厂，如 89 Mybatis
 
 ...   在 Spring 中，工厂模式最经典的应用莫过于实现 IOC 容器，对应的 Spring 源码主要是 BeanFactory 类和 ApplicationContext 相关类（AbstractApplicationContext、ClassPathXmlApplicationContext、FileSystemXmlApplicationContext…）。
