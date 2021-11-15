@@ -41,8 +41,6 @@
 
 ## 示例
 
-### 饿汉式
-
 ```java
 public class ConstructorArg {
 
