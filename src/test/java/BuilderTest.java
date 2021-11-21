@@ -28,10 +28,8 @@ public class BuilderTest {
         });
         Assertions.assertEquals("校验异常", exception1.getMessage());
 
-
-        String str = new StringBuilder().append("asdasd").append(123).toString();
-
     }
+
 
 
     // java.lang.StringBuilder （ 非同步 ）
@@ -43,5 +41,8 @@ public class BuilderTest {
 
     // 82 Builder 模式在 Guava 中的应用
 
+    public void asd(){
+        String str = new StringBuilder().append("asdasd").append(123).toString();
+    }
 
 }
