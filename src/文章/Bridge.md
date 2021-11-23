@@ -6,6 +6,8 @@
 
 在 GoF 的《设计模式》中，桥接模式是这样定义的：“将抽象和实现解耦，让它们可以独立变化。”
 
+独立的概念可能是：抽象/平台，域/基础设施，前端/后端或接口/实现。
+
 **抽象部分**（也被称为接口）是一些实体的高阶控制层，该层自身不完成任何具体的工作，它需要将工作委派给**实现部分层**（也被称为平台）。
 
 这里的抽象和实现是广义上的，而非特指抽象类、实现类。
@@ -19,9 +21,9 @@
 
 很多书籍资料中还有另外一种理解方式： “一个类存在两个（或多个）独立变化的维度，通过组合的方式，让这些维度可以独立进行扩展。”
 
-例子：
+例子：slf4j
 
-> slf4j其中有三个核心概念，logger，appender 和 encoder。
+> slf4j 其中有三个核心概念，logger，appender 和 encoder。
 >
 > 分别指这个日志记录器负责哪个类的日志，日志打印到哪里以及日志打印的格式。
 >
@@ -56,31 +58,130 @@
 
 ## 实现方式
 
-- 明确类中独立的维度。独立的概念可能是：抽象/平台，域/基础设施，前端/后端或接口/实现。
-- 了解客户端的业务需求，并在抽象基类中定义它们。
-- 确定在所有平台上都可执行的业务。并在通用实现接口中声明抽象部分所需的业务。
-- 为你域内的所有平台创建实现类，但需确保它们遵循实现部分的接口。
-- 在抽象类中添加指向实现类型的引用成员变量。抽象部分会将大部分工作委派给该成员变量所指向的实现对象。
-- 如果你的高层逻辑有多个变体，则可通过扩展抽象基类为每个变体创建一个精确抽象。
-- 客户端代码必须将实现对象传递给抽象部分的构造函数才能使其能够相互关联。此后，客户端只需与抽象对象进行交互，无需和实现对象打交道。
-
+1. 在抽象基类（高阶控制层）中定义客户端的业务需求。
+4. 在抽象类中添加指向实现类型的引用成员变量。
+2. 在通用实现接口（实现平台层）中声明抽象部分所需的业务。 
+3. 创建实现类。 
+5. 如果高层逻辑有多个变体，则可通过扩展抽象基类为每个变体创建一个精确抽象。 
+6. 客户端代码必须将实现对象传递给抽象部分的构造函数才能使其能够相互关联。此后，客户端只需与抽象对象进行交互，无需和实现对象打交道。
 
 --- 
 
 ## 示例
 
+‘抽象’基类：
 ```java
-public class asd {
+// 电脑
+public interface Computer {
+    /**
+     * 1.定义业务需求：打印
+     */
+    void print();
+    /**
+     * 2.指向实现类型的引用：设置打印机
+     */
+    void setPrinter(Printer printer);
+}
+```
+‘抽象’实现
+```java
+// Mac 电脑
+public class ComputerMac implements Computer{
+    private Printer printer;
+    @Override
+    public void print() {
+        System.out.println("mac 请求打印：");
+        printer.printFile();
+    }
+    @Override
+    public void setPrinter(Printer printer) {
+        this.printer = printer;
+    }
+}
+// Windows 电脑
+public class ComputerWindows implements Computer{
+    private Printer printer;
+    @Override
+    public void print() {
+        System.out.println("windows 请求打印：");
+        printer.printFile();
+    }
+    @Override
+    public void setPrinter(Printer printer) {
+        this.printer = printer;
+    }
+}
+```
 
+‘实现’基类：
+```java
+// 打印机
+public interface Printer {
+    /**
+     * 打印实现
+     */
+    void printFile();
+}
+```
+‘实现’实现：
+```java
+// 爱普生打印机
+public class PrinterEpson implements Printer{
+    @Override
+    public void printFile() {
+        System.out.println("爱普生打印机正在打印...");
+    }
+}
+// 惠普打印机
+public class PrinterHp implements Printer{
+    @Override
+    public void printFile() {
+        System.out.println("惠普打印机正在打印...");
+    }
 }
 ```
 
 测试代码
 
 ```java
-public class test {
-    
+public class BridgeTest {
+
+    @Test
+    public void test() {
+
+        Printer hp = new PrinterHp();
+        Printer epson = new PrinterEpson();
+
+        Computer mac = new ComputerMac();
+        Computer windows = new ComputerWindows();
+
+        // 我们可以在运行时更改抽象的实现（即计算机的打印机），因为抽象是指通过接口实现的。
+        // 在调用mac.print() 或 windows.print() 时，它将请求分派给printer.printFile()。
+        // 充当了桥梁并提供了两者之间的松散耦合。
+        
+        mac.setPrinter(hp);
+        mac.print();
+        mac.setPrinter(epson);
+        mac.print();
+
+        windows.setPrinter(hp);
+        windows.print();
+        windows.setPrinter(epson);
+        windows.print();
+    }
 }
+```
+输出
+``` shell
+mac 请求打印
+惠普打印机正在打印...
+mac 请求打印
+爱普生打印机正在打印...
+
+windows 请求打印
+惠普打印机正在打印...
+windows 请求打印
+爱普生打印机正在打印...
 ```
 
 --- 
@@ -89,15 +190,96 @@ public class test {
 
 ### JDK
 
-#### 123123123类
+#### JDBC 驱动
 
-java.lang.123231123#123
-
+用法：
 
 ```java
-public class asd {
-
+Class.forName("com.mysql.jdbc.Driver");//加载及注册JDBC驱动程序
+String url = "jdbc:mysql://localhost:3306/sample_db?user=root&password=your_password";
+Connection con = DriverManager.getConnection(url);
+Statement stmt = con.createStatement()；
+String query = "select * from test";
+ResultSet rs=stmt.executeQuery(query);
+while(rs.next()) {
+  rs.getString(1);
+  rs.getInt(2);
 }
 ```
+
+com.mysql.jdbc.Driver:
+
+```java
+package com.mysql.jdbc;
+import java.sql.SQLException;
+
+public class Driver extends NonRegisteringDriver implements java.sql.Driver {
+  static {
+    try {
+      java.sql.DriverManager.registerDriver(new Driver());
+    } catch (SQLException E) {
+      throw new RuntimeException("Can't register driver!");
+    }
+  }
+
+  /**
+   * Construct a new driver and register it with DriverManager
+   * @throws SQLException if a database error occurs.
+   */
+  public Driver() throws SQLException {
+    // Required for Class.forName().newInstance()
+  }
+}
+```
+
+DriverManager：
+
+```java
+public class DriverManager {
+  private final static CopyOnWriteArrayList<DriverInfo> registeredDrivers = new CopyOnWriteArrayList<DriverInfo>();
+
+  //...
+  static {
+    loadInitialDrivers();
+    println("JDBC DriverManager initialized");
+  }
+  //...
+
+  public static synchronized void registerDriver(java.sql.Driver driver) throws SQLException {
+    if (driver != null) {
+      registeredDrivers.addIfAbsent(new DriverInfo(driver));
+    } else {
+      throw new NullPointerException();
+    }
+  }
+
+  public static Connection getConnection(String url, String user, String password) throws SQLException {
+    java.util.Properties info = new java.util.Properties();
+    if (user != null) {
+      info.put("user", user);
+    }
+    if (password != null) {
+      info.put("password", password);
+    }
+    return (getConnection(url, info, Reflection.getCallerClass()));
+  }
+  //...
+}
+```
+
+#### SLF4J
+
+如前面所示：
+
+> slf4j 其中有三个核心概念，logger，appender 和 encoder。
+>
+> 分别指这个日志记录器负责哪个类的日志，日志打印到哪里以及日志打印的格式。
+>
+> 三个纬度上可以有不同的实现，使用者可以在每一纬度上定义多个实现。
+
+...
+
+
+
 
 
