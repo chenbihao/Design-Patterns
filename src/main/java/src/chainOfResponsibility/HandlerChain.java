@@ -1,4 +1,4 @@
-package src.ChainOfResponsibility;
+package src.chainOfResponsibility;
 
 /**
  * @author: chenbihao

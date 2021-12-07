@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
-import src.ChainOfResponsibility.HandlerA;
-import src.ChainOfResponsibility.HandlerB;
-import src.ChainOfResponsibility.HandlerChain;
+import src.chainOfResponsibility.HandlerA;
+import src.chainOfResponsibility.HandlerB;
+import src.chainOfResponsibility.HandlerChain;
 
 /**
  * @author: chenbihao
